@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+    let Apple = function(){
+        this.weight=10;
+        this.decrease = function () {
+            if (this.weight>0){
+                this.weight --;
+            }
+        };
+        this.isEmpty = function () {
+            if (this.weight === 0) {
+                return true;
+            }else return false;
+        };
+        this.gerWeight = function () {
+            return this.weight ;
+        }
+
+    };
+    let Human = function (name,gender,weight) {
+        this.name = name;
+        this.gender = gender;
+        this.weight = weight;
+        this.getName = function () {
+            return this.name;
+        };
+        this.setName = function (name) {
+            this.name = name;
+        };
+        this.getGender = function () {
+            return this.gender;
+        };
+        this.setGender = function (gender) {
+            this.gender = gender;
+        };
+        this.getWeight = function () {
+            return this.weight;
+        };
+        this.setWeight= function (name) {
+            this.weight = weight;
+        };
+        this.say  = function () {
+           alert("str")
+        };
+        this.setApple = function (apple) {
+            this.apple = apple;
+        };
+        this.checkApple = function (apple) {
+            if (!apple.isEmpty()) {
+                return true;
+            }else return false;
+
+        };
+        this.eatApple = function (apple) {
+            if (this.apple.weight>0){
+                this.apple.weight -= 1;
+                this.weight += 1;
+            } else {
+                alert("het tao")
+            };
+        };
+        this.isMale = function () {
+            if (gender){
+                return "Male";
+            } else return "Female";
+        };
+    }
+    let adam = new Human("Adam",true,60);
+    let eva = new Human("Eva",false,45);
+    let apple1 = new Apple();
+    adam.setApple(apple1);
+    eva.setApple(apple1);
+    while (adam.checkApple(apple1) && eva.checkApple(apple1)){
+        adam.eatApple(apple1);
+        eva.eatApple(apple1);
+    }
+    document.write("Adam: " + adam.getWeight()+"<br/>");
+    document.write("Eva: " + eva.getWeight());
+</script>
+
+</body>
+</html>
